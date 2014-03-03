@@ -1,11 +1,11 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'CLog'
-  spec.version      = '1.0'
+  spec.version      = '1.0.1'
   spec.summary      = 'Logging wrapper that is used in mysms project'
   spec.homepage     = 'http://www.mysms.com'
   spec.author       = { 'Christoph Lückler' => 'christoph.lueckler@ut11.net' }
-  spec.source       = { :git => 'git://github.com/mysms/clog.git', :tag => '1.0' }
+  spec.source       = { :git => 'git://github.com/mysms/clog.git', :tag => 'v1.0.1' }
 
   spec.source_files   = 'CLog/Classes/Logger/'
   
