@@ -98,7 +98,7 @@ static CLogService *g_sharedInstance;
 #ifdef DEBUG
     ddLogLevel = LOG_LEVEL_VERBOSE;
 #else
-    if (StandardSMSUserDefaults.debugModeEnabled) {
+    if (debugMode) {
         ddLogLevel = debugLogLevel;
     } else {
         ddLogLevel = normalLogLevel;
