@@ -1,16 +1,16 @@
 //
-//  CLLogService.m
+//  CLogService.m
 //  CLog
 //
 //  Created by Christoph Lückler on 14.02.14.
 //  Copyright (c) 2014 sms.at mobile internet services gmbh. All rights reserved.
 //
 
-#import "CLLogService.h"
+#import "CLogService.h"
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
 #import "DDFileLogger.h"
-#import "CLLogFormatter.h"
+#import "CLogFormatter.h"
 
 #import "ZipFile.h"
 #import "ZipWriteStream.h"
@@ -58,7 +58,7 @@ static CLogService *g_sharedInstance;
         
         // Sends log statements to a file
         fileLogger = [[DDFileLogger alloc] init];
-        fileLogger.logFormatter = [CLLogFormatter new];
+        fileLogger.logFormatter = [CLogFormatter new];
         fileLogger.rollingFrequency = 86400;
         fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
         [DDLog addLogger:fileLogger];

@@ -10,7 +10,7 @@
 #import "CLLogService.h"
 
 @interface CLogTests : XCTestCase {
-    CLLogService *logService;
+    CLogService *logService;
 }
 
 @end
@@ -20,7 +20,7 @@
 - (void)setUp {
     [super setUp];
     
-    logService = [[CLLogService alloc] init];
+    logService = [[CLogService alloc] init];
     logService.normalLogLevel = LOG_LEVEL_VERBOSE;
 }
 

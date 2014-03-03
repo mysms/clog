@@ -1,5 +1,5 @@
 //
-//  CLLogService.h
+//  CLogService.h
 //  CLog
 //
 //  Created by Christoph Lückler on 14.02.14.

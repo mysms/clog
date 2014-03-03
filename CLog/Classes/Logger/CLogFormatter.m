@@ -1,15 +1,15 @@
 //
-//  CLLogFormatter.m
+//  CLogFormatter.m
 //  CLog
 //
 //  Created by Christoph Lückler on 17.02.14.
 //  Copyright (c) 2014 sms.at mobile internet services gmbh. All rights reserved.
 //
 
-#import "CLLogFormatter.h"
+#import "CLogFormatter.h"
 #import <libkern/OSAtomic.h>
 
-@implementation CLLogFormatter
+@implementation CLogFormatter
 
 NSString *dateFormatString = @"yyyy/MM/dd HH:mm:ss";
 

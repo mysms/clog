@@ -1,5 +1,5 @@
 //
-//  CLLogFormatter.h
+//  CLogFormatter.h
 //  CLog
 //
 //  Created by Christoph Lückler on 17.02.14.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DDLog.h"
 
-@interface CLLogFormatter : NSObject <DDLogFormatter> {
+@interface CLogFormatter : NSObject <DDLogFormatter> {
     int atomicLoggerCount;
     NSDateFormatter *threadUnsafeDateFormatter;
 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>05F2BB3C-5B24-4C78-894D-4E8089A3F826</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CLog</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>83C46A75-B09B-4BBF-B31C-2D1107B7E390</key>
+		<string>https://github.com/mysms/clog.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CLog.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>83C46A75-B09B-4BBF-B31C-2D1107B7E390</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mysms/clog.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>83C46A75-B09B-4BBF-B31C-2D1107B7E390</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>83C46A75-B09B-4BBF-B31C-2D1107B7E390</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CLog</string>
+		</dict>
+	</array>
+</dict>
+</plist>

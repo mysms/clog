@@ -20,10 +20,10 @@
 		F6D4A7FF18C4862A000D2326 /* CLogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D4A7FE18C4862A000D2326 /* CLogTests.m */; };
 		F6D4A80918C487A0000D2326 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6D4A80818C487A0000D2326 /* InfoPlist.strings */; };
 		F6D4A80C18C487AC000D2326 /* CLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D4A80B18C487AC000D2326 /* CLAppDelegate.m */; };
-		F6D4A81418C48860000D2326 /* CLLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D4A81118C48860000D2326 /* CLLogFormatter.m */; };
-		F6D4A81518C48860000D2326 /* CLLogService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D4A81318C48860000D2326 /* CLLogService.m */; };
-		F6D4A86118C48951000D2326 /* CLLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D4A81118C48860000D2326 /* CLLogFormatter.m */; };
-		F6D4A86218C48951000D2326 /* CLLogService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D4A81318C48860000D2326 /* CLLogService.m */; };
+		F6D4A81418C48860000D2326 /* CLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D4A81118C48860000D2326 /* CLogFormatter.m */; };
+		F6D4A81518C48860000D2326 /* CLogService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D4A81318C48860000D2326 /* CLogService.m */; };
+		F6D4A86118C48951000D2326 /* CLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D4A81118C48860000D2326 /* CLogFormatter.m */; };
+		F6D4A86218C48951000D2326 /* CLogService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D4A81318C48860000D2326 /* CLogService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +55,10 @@
 		F6D4A80818C487A0000D2326 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		F6D4A80A18C487AC000D2326 /* CLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLAppDelegate.h; path = Classes/CLAppDelegate.h; sourceTree = "<group>"; };
 		F6D4A80B18C487AC000D2326 /* CLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLAppDelegate.m; path = Classes/CLAppDelegate.m; sourceTree = "<group>"; };
-		F6D4A81018C48860000D2326 /* CLLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLLogFormatter.h; path = Classes/Logger/CLLogFormatter.h; sourceTree = "<group>"; };
-		F6D4A81118C48860000D2326 /* CLLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLLogFormatter.m; path = Classes/Logger/CLLogFormatter.m; sourceTree = "<group>"; };
-		F6D4A81218C48860000D2326 /* CLLogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLLogService.h; path = Classes/Logger/CLLogService.h; sourceTree = "<group>"; };
-		F6D4A81318C48860000D2326 /* CLLogService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLLogService.m; path = Classes/Logger/CLLogService.m; sourceTree = "<group>"; };
+		F6D4A81018C48860000D2326 /* CLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLogFormatter.h; path = Classes/Logger/CLogFormatter.h; sourceTree = "<group>"; };
+		F6D4A81118C48860000D2326 /* CLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLogFormatter.m; path = Classes/Logger/CLogFormatter.m; sourceTree = "<group>"; };
+		F6D4A81218C48860000D2326 /* CLogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLogService.h; path = Classes/Logger/CLogService.h; sourceTree = "<group>"; };
+		F6D4A81318C48860000D2326 /* CLogService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLogService.m; path = Classes/Logger/CLogService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,10 +186,10 @@
 		F6D4A8C318C48B7D000D2326 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
-				F6D4A81018C48860000D2326 /* CLLogFormatter.h */,
-				F6D4A81118C48860000D2326 /* CLLogFormatter.m */,
-				F6D4A81218C48860000D2326 /* CLLogService.h */,
-				F6D4A81318C48860000D2326 /* CLLogService.m */,
+				F6D4A81018C48860000D2326 /* CLogFormatter.h */,
+				F6D4A81118C48860000D2326 /* CLogFormatter.m */,
+				F6D4A81218C48860000D2326 /* CLogService.h */,
+				F6D4A81318C48860000D2326 /* CLogService.m */,
 			);
 			name = Logger;
 			sourceTree = "<group>";
@@ -325,8 +325,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6D4A81418C48860000D2326 /* CLLogFormatter.m in Sources */,
-				F6D4A81518C48860000D2326 /* CLLogService.m in Sources */,
+				F6D4A81418C48860000D2326 /* CLogFormatter.m in Sources */,
+				F6D4A81518C48860000D2326 /* CLogService.m in Sources */,
 				F6D4A7E618C4862A000D2326 /* main.m in Sources */,
 				F6D4A80C18C487AC000D2326 /* CLAppDelegate.m in Sources */,
 			);
@@ -336,9 +336,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6D4A86218C48951000D2326 /* CLLogService.m in Sources */,
+				F6D4A86218C48951000D2326 /* CLogService.m in Sources */,
 				F6D4A7FF18C4862A000D2326 /* CLogTests.m in Sources */,
-				F6D4A86118C48951000D2326 /* CLLogFormatter.m in Sources */,
+				F6D4A86118C48951000D2326 /* CLogFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
