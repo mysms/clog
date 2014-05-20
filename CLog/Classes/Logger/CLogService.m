@@ -47,6 +47,7 @@ static CLogService *g_sharedInstance;
         
         // Sends log statements to Xcode console - if available
         [DDLog addLogger:[DDTTYLogger sharedInstance]];
+        [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
 #endif
         
         // Set lov levels
