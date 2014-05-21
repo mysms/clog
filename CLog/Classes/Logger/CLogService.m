@@ -48,6 +48,19 @@ static CLogService *g_sharedInstance;
         // Sends log statements to Xcode console - if available
         [DDLog addLogger:[DDTTYLogger sharedInstance]];
         [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+        
+        // Customize debug colors
+        [[DDTTYLogger sharedInstance] setForegroundColor: [UIColor redColor]
+                                         backgroundColor: nil
+                                                 forFlag: LOG_FLAG_ERROR];
+        
+        [[DDTTYLogger sharedInstance] setForegroundColor: [UIColor orangeColor]
+                                         backgroundColor: nil
+                                                 forFlag: LOG_FLAG_WARN];
+        
+        [[DDTTYLogger sharedInstance] setForegroundColor: [UIColor greenColor]
+                                         backgroundColor: nil
+                                                 forFlag: LOG_FLAG_INFO];
 #endif
         
         // Set lov levels
