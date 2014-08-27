@@ -93,7 +93,7 @@ static CLogService *g_sharedInstance;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:kCLogLogLevelObserveKey]) {
         NSUserDefaults *defaults = object;
-        [self ddLogLevelForCLogLevel:[[defaults objectForKey:kCLogLogLevelObserveKey] integerValue]];
+        [self setLogLevel:[[defaults objectForKey:kCLogLogLevelObserveKey] integerValue]];
     }
 }
 
@@ -102,32 +102,35 @@ static CLogService *g_sharedInstance;
 #pragma mark - Private methods
 
 - (void)setLogLevel:(CLogLevel)level {
-    CLogInfo(@"Set %@ log level", (int)level);
-    ddLogLevel = [self ddLogLevelForCLogLevel:level];
-}
-
-- (int)ddLogLevelForCLogLevel:(CLogLevel)level {
+    CLogInfo(@"Set %d log level", (int)level);
+    
 #ifdef DEBUG
-    return LOG_LEVEL_VERBOSE;
+    ddLogLevel = LOG_LEVEL_VERBOSE;
 #else
     switch (level) {
         case CLogLevelVerbose:
-            return LOG_LEVEL_VERBOSE;
+            ddLogLevel = LOG_LEVEL_VERBOSE;
+            break;
             
         case CLogLevelDebug:
-            return LOG_LEVEL_DEBUG;
+            ddLogLevel = LOG_LEVEL_DEBUG;
+            break;
             
         case CLogLevelInfo:
-            return LOG_LEVEL_INFO;
+            ddLogLevel = LOG_LEVEL_INFO;
+            break;
             
         case CLogLevelWarn:
-            return LOG_LEVEL_WARN;
+            ddLogLevel = LOG_LEVEL_WARN;
+            break;
             
         case CLogLevelError:
-            return LOG_LEVEL_ERROR;
+            ddLogLevel = LOG_LEVEL_ERROR;
+            break;
             
         default:
-            return LOG_LEVEL_WARN;
+            ddLogLevel = LOG_LEVEL_WARN;
+            break;
     }
 #endif
 }
