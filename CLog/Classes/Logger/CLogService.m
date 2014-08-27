@@ -18,7 +18,7 @@
 // configure log level for debug and release configuration
 int ddLogLevel = LOG_LEVEL_WARN;
 
-NSString *kCLogDebugUserDefaultsKey = @"debugModeEnabled";
+NSString *kCLogLogLevelObserveKey = @"logLevel";
 
 @interface CLogService () {
     DDFileLogger *fileLogger;
@@ -26,7 +26,6 @@ NSString *kCLogDebugUserDefaultsKey = @"debugModeEnabled";
 @end
 
 @implementation CLogService
-@synthesize debugLogLevel, normalLogLevel;
 
 static CLogService *g_sharedInstance;
 
@@ -62,13 +61,9 @@ static CLogService *g_sharedInstance;
                                          backgroundColor: nil
                                                  forFlag: LOG_FLAG_INFO];
 #endif
-        
-        // Set lov levels
-        debugLogLevel = LOG_LEVEL_DEBUG;
-        normalLogLevel = LOG_LEVEL_WARN;
-        
+
         // Set log level
-        [self setLogLevelForDebugMode:YES];
+        [self setLogLevel:CLogLevelDefault];
         
         // Sends log statements to a file
         fileLogger = [[DDFileLogger alloc] init];
@@ -79,7 +74,7 @@ static CLogService *g_sharedInstance;
 
         // Add observer to detect setting change
         [[NSUserDefaults standardUserDefaults] addObserver: self
-                                                forKeyPath: kCLogDebugUserDefaultsKey
+                                                forKeyPath: kCLogLogLevelObserveKey
                                                    options: NSKeyValueObservingOptionNew
                                                    context: nil];
     }
@@ -88,7 +83,7 @@ static CLogService *g_sharedInstance;
 
 - (void)dealloc {
     [[NSUserDefaults standardUserDefaults] removeObserver: self
-                                               forKeyPath: kCLogDebugUserDefaultsKey];
+                                               forKeyPath: kCLogLogLevelObserveKey];
 }
 
 
@@ -96,9 +91,9 @@ static CLogService *g_sharedInstance;
 #pragma mark - Notifications
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([keyPath isEqualToString:kCLogDebugUserDefaultsKey]) {
+    if ([keyPath isEqualToString:kCLogLogLevelObserveKey]) {
         NSUserDefaults *defaults = object;
-        [self setLogLevelForDebugMode:[defaults boolForKey:kCLogDebugUserDefaultsKey]];
+        [self ddLogLevelForCLogLevel:[[defaults objectForKey:kCLogLogLevelObserveKey] integerValue]];
     }
 }
 
@@ -106,16 +101,33 @@ static CLogService *g_sharedInstance;
 #pragma mark
 #pragma mark - Private methods
 
-- (void)setLogLevelForDebugMode:(BOOL)debugMode {
-    CLogInfo(@"Set debug mode enabled - %d", debugMode);
-    
+- (void)setLogLevel:(CLogLevel)level {
+    CLogInfo(@"Set %@ log level", (int)level);
+    ddLogLevel = [self ddLogLevelForCLogLevel:level];
+}
+
+- (int)ddLogLevelForCLogLevel:(CLogLevel)level {
 #ifdef DEBUG
-    ddLogLevel = LOG_LEVEL_VERBOSE;
+    return LOG_LEVEL_VERBOSE;
 #else
-    if (debugMode) {
-        ddLogLevel = debugLogLevel;
-    } else {
-        ddLogLevel = normalLogLevel;
+    switch (level) {
+        case CLogLevelVerbose:
+            return LOG_LEVEL_VERBOSE;
+            
+        case CLogLevelDebug:
+            return LOG_LEVEL_DEBUG;
+            
+        case CLogLevelInfo:
+            return LOG_LEVEL_INFO;
+            
+        case CLogLevelWarn:
+            return LOG_LEVEL_WARN;
+            
+        case CLogLevelError:
+            return LOG_LEVEL_ERROR;
+            
+        default:
+            return LOG_LEVEL_WARN;
     }
 #endif
 }

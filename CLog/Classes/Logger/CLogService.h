@@ -13,9 +13,21 @@
 extern int ddLogLevel;
 
 /**
+ *  Available Log-Levels
+ */
+typedef NS_ENUM(NSUInteger, CLogLevel) {
+    CLogLevelDefault,
+    CLogLevelVerbose,
+    CLogLevelDebug,
+    CLogLevelInfo,
+    CLogLevelWarn,
+    CLogLevelError
+};
+
+/**
  *  Should be used to dynamicaly set the debug log level and stored in NSUserDefaults
  */
-extern NSString *kCLogDebugUserDefaultsKey;
+extern NSString *kCLogLogLevelObserveKey;
 
 #define SharedCLogService ([CLogService sharedService])
 
@@ -29,16 +41,6 @@ extern NSString *kCLogDebugUserDefaultsKey;
 @interface CLogService : DDLog {
     
 }
-
-/**
- * LogLevel when Logger is in debug mode
- */
-@property (assign) int debugLogLevel;
-
-/**
- * LogLevel when Logger is not in debug mode
- */
-@property (assign) int normalLogLevel;
 
 
 /**
