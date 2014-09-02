@@ -62,8 +62,13 @@ static CLogService *g_sharedInstance;
                                                  forFlag: LOG_FLAG_INFO];
 #endif
 
-        // Set log level
-        [self setLogLevel:CLogLevelDefault];
+        // Set initial log level
+        NSNumber *savedLogLevel = [[NSUserDefaults standardUserDefaults] objectForKey:kCLogLogLevelObserveKey];
+        if (savedLogLevel) {
+            [self setLogLevel:[savedLogLevel integerValue]];
+        } else {
+            [self setLogLevel:CLogLevelDefault];
+        }
         
         // Sends log statements to a file
         fileLogger = [[DDFileLogger alloc] init];
