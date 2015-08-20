@@ -11,7 +11,7 @@
 
 @implementation CLogDebugFormatter
 
-NSString *dateFormatString = @"HH:mm:ss";
+NSString *dateDebugFormatString = @"HH:mm:ss";
 
 - (NSString *)stringFromDate:(NSDate *)date {
     int32_t loggerCount = OSAtomicAdd32(0, &atomicLoggerCount);
@@ -22,7 +22,7 @@ NSString *dateFormatString = @"HH:mm:ss";
         if (threadUnsafeDateFormatter == nil) {
             threadUnsafeDateFormatter = [[NSDateFormatter alloc] init];
             [threadUnsafeDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-            [threadUnsafeDateFormatter setDateFormat:dateFormatString];
+            [threadUnsafeDateFormatter setDateFormat:dateDebugFormatString];
         }
         
         return [threadUnsafeDateFormatter stringFromDate:date];
