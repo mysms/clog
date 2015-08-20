@@ -38,7 +38,7 @@ NSString *dateDebugFormatString = @"HH:mm:ss";
         if (dateFormatter == nil) {
             dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-            [dateFormatter setDateFormat:dateFormatString];
+            [dateFormatter setDateFormat:dateDebugFormatString];
             
             [threadDictionary setObject:dateFormatter forKey:key];
         }
