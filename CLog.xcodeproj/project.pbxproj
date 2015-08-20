@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6B6B91630DE649CBA5880472 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AC608FA73845DFBA06BE40 /* libPods.a */; };
+		F686A1951B85F72900F06FF1 /* CLogDebugFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F686A1941B85F72900F06FF1 /* CLogDebugFormatter.m */; };
+		F686A1961B85F72900F06FF1 /* CLogDebugFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F686A1941B85F72900F06FF1 /* CLogDebugFormatter.m */; };
 		F6D4A7DA18C4862A000D2326 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D4A7D918C4862A000D2326 /* Foundation.framework */; };
 		F6D4A7DC18C4862A000D2326 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D4A7DB18C4862A000D2326 /* CoreGraphics.framework */; };
 		F6D4A7DE18C4862A000D2326 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D4A7DD18C4862A000D2326 /* UIKit.framework */; };
@@ -37,8 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E9546B5E9C9441D936D1AE9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C6AC608FA73845DFBA06BE40 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBCE130C4FCA46A6B8DF0059 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		F686A1931B85F72900F06FF1 /* CLogDebugFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLogDebugFormatter.h; path = Classes/Logger/CLogDebugFormatter.h; sourceTree = "<group>"; };
+		F686A1941B85F72900F06FF1 /* CLogDebugFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLogDebugFormatter.m; path = Classes/Logger/CLogDebugFormatter.m; sourceTree = "<group>"; };
+		F686A1971B85F9D900F06FF1 /* CLog.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CLog.podspec; sourceTree = "<group>"; };
 		F6D4A7D618C4862A000D2326 /* CLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D4A7D918C4862A000D2326 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F6D4A7DB18C4862A000D2326 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,6 +64,7 @@
 		F6D4A81118C48860000D2326 /* CLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLogFormatter.m; path = Classes/Logger/CLogFormatter.m; sourceTree = "<group>"; };
 		F6D4A81218C48860000D2326 /* CLogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLogService.h; path = Classes/Logger/CLogService.h; sourceTree = "<group>"; };
 		F6D4A81318C48860000D2326 /* CLogService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLogService.m; path = Classes/Logger/CLogService.m; sourceTree = "<group>"; };
+		FAE12B646517414DF0DDDF63 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,15 +92,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD6C721B5579720B53DC6D9C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAE12B646517414DF0DDDF63 /* Pods.debug.xcconfig */,
+				8E9546B5E9C9441D936D1AE9 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F6D4A7CD18C4862A000D2326 = {
 			isa = PBXGroup;
 			children = (
+				F686A1971B85F9D900F06FF1 /* CLog.podspec */,
 				F6D4A7DF18C4862A000D2326 /* CLog */,
 				F6D4A7F818C4862A000D2326 /* CLogTests */,
 				F6D4A7D818C4862A000D2326 /* Frameworks */,
 				F6D4A81718C4890B000D2326 /* Libraries */,
 				F6D4A7D718C4862A000D2326 /* Products */,
-				CBCE130C4FCA46A6B8DF0059 /* Pods.xcconfig */,
+				CD6C721B5579720B53DC6D9C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +204,8 @@
 			children = (
 				F6D4A81018C48860000D2326 /* CLogFormatter.h */,
 				F6D4A81118C48860000D2326 /* CLogFormatter.m */,
+				F686A1931B85F72900F06FF1 /* CLogDebugFormatter.h */,
+				F686A1941B85F72900F06FF1 /* CLogDebugFormatter.m */,
 				F6D4A81218C48860000D2326 /* CLogService.h */,
 				F6D4A81318C48860000D2326 /* CLogService.m */,
 			);
@@ -241,7 +259,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CL;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Up To Eleven";
 				TargetAttributes = {
 					F6D4A7F018C4862A000D2326 = {
@@ -315,7 +333,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -327,6 +345,7 @@
 			files = (
 				F6D4A81418C48860000D2326 /* CLogFormatter.m in Sources */,
 				F6D4A81518C48860000D2326 /* CLogService.m in Sources */,
+				F686A1951B85F72900F06FF1 /* CLogDebugFormatter.m in Sources */,
 				F6D4A7E618C4862A000D2326 /* main.m in Sources */,
 				F6D4A80C18C487AC000D2326 /* CLAppDelegate.m in Sources */,
 			);
@@ -339,6 +358,7 @@
 				F6D4A86218C48951000D2326 /* CLogService.m in Sources */,
 				F6D4A7FF18C4862A000D2326 /* CLogTests.m in Sources */,
 				F6D4A86118C48951000D2326 /* CLogFormatter.m in Sources */,
+				F686A1961B85F72900F06FF1 /* CLogDebugFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +388,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -407,7 +426,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -438,7 +456,7 @@
 		};
 		F6D4A80318C4862A000D2326 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBCE130C4FCA46A6B8DF0059 /* Pods.xcconfig */;
+			baseConfigurationReference = FAE12B646517414DF0DDDF63 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -452,7 +470,7 @@
 		};
 		F6D4A80418C4862A000D2326 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBCE130C4FCA46A6B8DF0059 /* Pods.xcconfig */;
+			baseConfigurationReference = 8E9546B5E9C9441D936D1AE9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -466,9 +484,7 @@
 		};
 		F6D4A80618C4862A000D2326 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBCE130C4FCA46A6B8DF0059 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CLog.app/CLog";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -490,9 +506,7 @@
 		};
 		F6D4A80718C4862A000D2326 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBCE130C4FCA46A6B8DF0059 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CLog.app/CLog";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

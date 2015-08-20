@@ -11,6 +11,7 @@
 #import "DDTTYLogger.h"
 #import "DDFileLogger.h"
 #import "CLogFormatter.h"
+#import "CLogDebugFormatter.h"
 
 #import "ZipFile.h"
 #import "ZipWriteStream.h"
@@ -42,11 +43,15 @@ static CLogService *g_sharedInstance;
 	} else if ((self = g_sharedInstance = [super init])) {
 #ifdef DEBUG
         // Sends log statements to Apple System Logger, so they show up on Console.app
-        [DDLog addLogger:[DDASLLogger sharedInstance]];
+        DDASLLogger *system = [DDASLLogger sharedInstance];
+        system.logFormatter = [CLogDebugFormatter new];
+        [DDLog addLogger:system];
         
         // Sends log statements to Xcode console - if available
-        [DDLog addLogger:[DDTTYLogger sharedInstance]];
-        [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+        DDTTYLogger *console = [DDTTYLogger sharedInstance];
+        console.logFormatter = [CLogDebugFormatter new];
+        console.colorsEnabled = YES;
+        [DDLog addLogger:console];
         
         // Customize debug colors
         [[DDTTYLogger sharedInstance] setForegroundColor: [UIColor redColor]

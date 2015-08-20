@@ -31,11 +31,19 @@ extern NSString *kCLogLogLevelObserveKey;
 
 #define SharedCLogService ([CLogService sharedService])
 
-#define CLogError(fmt, ...)     DDLogError((@"%s (%d) | " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-#define CLogWarn(fmt, ...)      DDLogWarn((@"%s (%d) | " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-#define CLogInfo(fmt, ...)      DDLogInfo((@"%s (%d) | " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-#define CLogDebug(fmt, ...)     DDLogDebug((@"%s (%d) | " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-#define CLogVerbose(fmt, ...)   DDLogVerbose((@"%s (%d) | " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#ifdef DEBUG
+    #define CLogError(fmt, ...)     DDLogError(fmt, ##__VA_ARGS__)
+    #define CLogWarn(fmt, ...)      DDLogWarn(fmt, ##__VA_ARGS__)
+    #define CLogInfo(fmt, ...)      DDLogInfo(fmt, ##__VA_ARGS__)
+    #define CLogDebug(fmt, ...)     DDLogDebug(fmt, ##__VA_ARGS__)
+    #define CLogVerbose(fmt, ...)   DDLogVerbose(fmt, ##__VA_ARGS__)
+#else
+    #define CLogError(fmt, ...)     DDLogError((@"%s (%d) | " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+    #define CLogWarn(fmt, ...)      DDLogWarn((@"%s (%d) | " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+    #define CLogInfo(fmt, ...)      DDLogInfo((@"%s (%d) | " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+    #define CLogDebug(fmt, ...)     DDLogDebug((@"%s (%d) | " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+    #define CLogVerbose(fmt, ...)   DDLogVerbose((@"%s (%d) | " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#endif
 
 
 @interface CLogService : DDLog {
