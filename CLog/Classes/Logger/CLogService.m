@@ -65,6 +65,14 @@ static CLogService *g_sharedInstance;
         [[DDTTYLogger sharedInstance] setForegroundColor: [UIColor greenColor]
                                          backgroundColor: nil
                                                  forFlag: LOG_FLAG_INFO];
+        
+        [[DDTTYLogger sharedInstance] setForegroundColor: [UIColor whiteColor]
+                                         backgroundColor: nil
+                                                 forFlag: LOG_FLAG_DEBUG];
+        
+        [[DDTTYLogger sharedInstance] setForegroundColor: [UIColor grayColor]
+                                         backgroundColor: nil
+                                                 forFlag: LOG_FLAG_VERBOSE];
 #endif
 
         // Set initial log level
